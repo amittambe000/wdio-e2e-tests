@@ -1,0 +1,27 @@
+{
+  "name": "wdio",
+  "version": "1.0.0",
+  "description": "wdio e2e tests",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "amit",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.16",
+    "@wdio/allure-reporter": "^8.39.0",
+    "@wdio/cli": "^8.39.0",
+    "@wdio/cucumber-framework": "^8.39.0",
+    "@wdio/local-runner": "^8.39.0",
+    "@wdio/spec-reporter": "^8.39.0",
+    "chai": "^5.1.1",
+    "chromedriver": "^126.0.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "wdio-chromedriver-service": "^8.1.1"
+  }
+}
