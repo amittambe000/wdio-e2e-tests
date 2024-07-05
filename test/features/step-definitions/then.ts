@@ -14,7 +14,6 @@ Then(/^Validate all the products price$/, async function () {
     let price = await elePriceArr[i].getText();
     priceStrArr.push(price);
   }
-  await browser.debug();
   console.log(`Prices is ${priceStrArr}`);
 
   let priceNumArr = priceStrArr.map((ele) => +ele.replace("$", ""));
