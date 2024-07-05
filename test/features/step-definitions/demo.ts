@@ -26,7 +26,7 @@ Then(/^URL should match (.*)$/, async function (exepectedURL) {
  */
 
 Given(/^A web page is opened$/, async function () {
-  await browser.url("/inputs");
+  await browser.url("/dropdown");
   await browser.setTimeout({ implicit: 15000, pageLoad: 10000 });
   await browser.maximizeWindow();
 });
@@ -35,6 +35,23 @@ When(/^Perform web interactions$/, async function () {
   /**
    *  Input Box
    */
-  let ele = $(`[type='number']`);
-  await ele.setValue("12345");
+  /*   let ele = $(`[type='number']`);
+  await ele.setValue("12345"); */
+
+  /**
+   *  Drop DOwn
+   */
+  let el = await $(`#dropdown option[selected='selected']`);
+  let actualTxt = await el.getText();
+  expect(actualTxt).to.equal("Please select an option");
+
+  let dropdownEls = await $$(`select > option`);
+  let arr = [];
+  for (let i = 0; i < dropdownEls.length; i++) {
+    let el = dropdownEls[i];
+    let value = await el.getText();
+    arr.push(value);
+    console.log(value);
+  }
+  console.log(`Drop down options ${arr}`);
 });
